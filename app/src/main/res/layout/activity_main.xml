@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <com.dvinfosys.passcode.PasscodeView.IndicatorDots
+        android:id="@+id/indicator_dots"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        android:layout_marginTop="36dp"
+        android:gravity="center" />
+
+    <com.dvinfosys.passcode.PasscodeView.PinLockView
+        android:id="@+id/pin_lock_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        app:dotDiameter="20dp"
+        app:dotSpacing="20dp"
+        app:dotFilledBackground="@drawable/fill_dot"
+        app:dotEmptyBackground="@drawable/ic_back"
+        app:keypadButtonBackgroundDrawable="@drawable/ic_back"
+        app:keypadButtonSize="72dp"
+        app:keypadDeleteButtonDrawable="@drawable/btn_close"
+        app:keypadDeleteButtonPressedColor="#E53935"
+        app:keypadShowDeleteButton="true"
+        app:keypadDeleteButtonSize="50dp"
+        app:keypadTextColor="#000000"
+        app:keypadTextSize="25dp"
+        app:keypadVerticalSpacing="12dp" />
+
+</LinearLayout>
