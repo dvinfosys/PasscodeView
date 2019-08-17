@@ -7,6 +7,6 @@
     <dimen name="default_horizontal_spacing">32dp</dimen>
     <dimen name="default_vertical_spacing">0dp</dimen>
 
-    <dimen name="default_dot_diameter">8dp</dimen>
+    <dimen name="default_dot_diameter">18dp</dimen>
     <dimen name="default_dot_spacing">8dp</dimen>
 </resources>

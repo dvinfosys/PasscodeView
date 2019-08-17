@@ -17,7 +17,8 @@ import java.lang.annotation.RetentionPolicy;
 
 public class IndicatorDots extends LinearLayout {
     private static final int DEFAULT_PIN_LENGTH = 4;
-    private int mDotDiameter;
+    private static final int DEFAULT_DOT_DIAMETER = 80;
+    private int mDotDiameter=30;
     private int mDotSpacing;
     private int mFillDrawable;
     private int mEmptyDrawable;
@@ -36,10 +37,11 @@ public class IndicatorDots extends LinearLayout {
     public IndicatorDots(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
 
-        TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.PinLockView);
+        TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.PinLockView, defStyleAttr, 0);
 
         try {
             mDotDiameter = (int) typedArray.getDimension(R.styleable.PinLockView_dotDiameter, ResourceUtils.getDimensionInPx(getContext(), R.dimen.default_dot_diameter));
+            //mDotDiameter = typedArray.getDimensionPixelSize(R.styleable.PinLockView_dotDiameter, DEFAULT_DOT_DIAMETER);
             mDotSpacing = (int) typedArray.getDimension(R.styleable.PinLockView_dotSpacing, ResourceUtils.getDimensionInPx(getContext(), R.dimen.default_dot_spacing));
             mFillDrawable = typedArray.getResourceId(R.styleable.PinLockView_dotFilledBackground, R.drawable.dot_filled);
             mEmptyDrawable = typedArray.getResourceId(R.styleable.PinLockView_dotEmptyBackground, R.drawable.dot_empty);
@@ -58,12 +60,9 @@ public class IndicatorDots extends LinearLayout {
             for (int i = 0; i < mPinLength; i++) {
                 View dot = new View(context);
                 emptyDot(dot);
-
-                LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(mDotDiameter,
-                        mDotDiameter);
+                LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(mDotDiameter, mDotDiameter);
                 params.setMargins(mDotSpacing, 0, mDotSpacing, 0);
                 dot.setLayoutParams(params);
-
                 addView(dot);
             }
         } else if (mIndicatorType == 2) {
@@ -138,6 +137,11 @@ public class IndicatorDots extends LinearLayout {
         this.mPinLength = pinLength;
         removeAllViews();
         initView(getContext());
+    }
+
+    public void setDotDiameter(int dotDiameter) {
+        this.mDotDiameter = dotDiameter;
+        //initView(getContext());
     }
 
     public

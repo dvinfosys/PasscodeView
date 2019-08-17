@@ -24,7 +24,6 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="20dp"
-        app:dotDiameter="20dp"
         app:dotSpacing="20dp"
         app:dotFilledBackground="@drawable/fill_dot"
         app:dotEmptyBackground="@drawable/ic_back"
